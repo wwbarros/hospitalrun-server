@@ -9,7 +9,7 @@
     "clean-build": "rimraf ./dist && mkdir dist",
     "start": "cross-env NODE_ENV=production fastify start -a 0.0.0.0 -p 3000 -l info \"./dist/app.js\"",
     "predev": "npm run lint",
-    "dev": "cross-env NODE_ENV=development nodemon -e ts -w \"./src\" -x \"npm run debug\"",
+    "dev": "cross-env NODE_ENV=development nodemon -L -e ts -w \"./src\" -x \"npm run debug\"",
     "debug": "node -r ts-node/register -r dotenv/config --inspect ./src/index.ts | pino-colada",
     "update": "npx npm-check -u",
     "prelint": "npm run prettier",
